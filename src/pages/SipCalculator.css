@@ -1,0 +1,87 @@
+.sip-wrapper {
+  padding: 80px 10%;
+  background: #f9f9f9;
+  font-family: "Segoe UI", sans-serif;
+  color: #333;
+  text-align: center;
+}
+
+.sip-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.sip-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.sip-card {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+  margin: auto;
+  transition: all 0.3s ease;
+}
+
+.sip-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sip-inputs label {
+  text-align: left;
+  font-weight: 600;
+}
+
+.sip-inputs input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.sip-btn {
+  background-color: #1db954;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.sip-btn:hover {
+  background-color: #159c46;
+  transform: scale(1.05);
+}
+
+.sip-result {
+  margin-top: 40px;
+  padding: 20px;
+  background: #eaf6ea;
+  border-radius: 12px;
+}
+
+.sip-result h3 {
+  margin-bottom: 10px;
+  color: #1db954;
+}
+
+.sip-result p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .sip-card {
+    padding: 30px 20px;
+  }
+}

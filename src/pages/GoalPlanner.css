@@ -1,0 +1,87 @@
+.goal-wrapper {
+  max-width: 700px;
+  margin: 80px auto;
+  padding: 40px;
+  background: #fefefe;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.goal-wrapper h1 {
+  color: #1db954;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.goal-wrapper p {
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.goal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.goal-form input {
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.goal-form button {
+  background: #1db954;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.goal-form button:hover {
+  background: #159944;
+}
+
+.goal-result {
+  margin-top: 30px;
+  background: #eafce9;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.goal-result h3 {
+  margin-bottom: 10px;
+  color: #1db954;
+}
+
+.goal-result p {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.goal-result span {
+  display: block;
+  margin-top: 10px;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .goal-wrapper {
+    padding: 20px;
+  }
+
+  .goal-form input {
+    font-size: 0.95rem;
+  }
+
+  .goal-form button {
+    font-size: 1rem;
+  }
+}

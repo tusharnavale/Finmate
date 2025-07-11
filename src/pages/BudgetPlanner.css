@@ -1,0 +1,95 @@
+.budget-wrapper {
+  max-width: 700px;
+  margin: 80px auto;
+  padding: 40px;
+  background: #f9fdf9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.budget-wrapper h1 {
+  color: #1db954;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.budget-wrapper p {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #444;
+}
+
+.budget-section label {
+  display: block;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.budget-section input[type="number"],
+.add-expense input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 8px;
+}
+
+.add-expense {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.add-expense input {
+  flex: 1;
+}
+
+.add-expense button {
+  padding: 10px 16px;
+  background: #1db954;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.add-expense button:hover {
+  background: #169b45;
+}
+
+.summary {
+  margin: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  color: #222;
+}
+
+.expense-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+.expense-list li {
+  padding: 10px 15px;
+  background: #effaf0;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  border-left: 4px solid #1db954;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .add-expense {
+    flex-direction: column;
+  }
+
+  .summary {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
