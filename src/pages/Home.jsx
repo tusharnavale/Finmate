@@ -4,6 +4,8 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { BrainCircuit, Timer, LockOpen, Zap } from 'lucide-react';
 
+
+//add a commit
 const Home = () => {
   const [showBot, setShowBot] = useState(false);
 
