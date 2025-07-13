@@ -3,6 +3,8 @@ import "./SipCalculator.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+
+//this is sip calc for calculating SIP
 const SipCalculator = () => {
   const [monthlyInvestment, setMonthlyInvestment] = useState("");
   const [expectedReturn, setExpectedReturn] = useState("");
