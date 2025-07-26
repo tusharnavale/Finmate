@@ -6,6 +6,7 @@ import { BrainCircuit, Timer, LockOpen, Zap } from 'lucide-react';
 
 
 //add a commit
+//add a 2nd commit
 const Home = () => {
   const [showBot, setShowBot] = useState(false);
 
