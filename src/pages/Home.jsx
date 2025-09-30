@@ -7,6 +7,7 @@ import { BrainCircuit, Timer, LockOpen, Zap } from 'lucide-react';
 
 //add a commit
 //add a 2nd commit
+//adda 3rd commit 
 const Home = () => {
   const [showBot, setShowBot] = useState(false);
 
@@ -16,7 +17,7 @@ const Home = () => {
       <main className="home-wrapper">
         {/* Hero Section */}
         <section className="hero">
-          <div className="hero-left">
+          <div className="hero-left">  
             <h1>
               Smarter Financial Decisions <br /> with <span className="green">FinMate</span>
             </h1>
