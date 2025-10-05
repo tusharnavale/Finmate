@@ -1,4 +1,4 @@
-/* SipCalculator.css - Premium Fintech SaaS */
+/* SipCalculator.css - Fully Aligned with SaaS Theme */
 
 .sip-wrapper {
   padding: 80px 0;
@@ -28,6 +28,7 @@
   font-size: 0.9rem;
   font-weight: 600;
   margin-bottom: 16px;
+  font-family: 'Inter', sans-serif;
 }
 
 .sip-title {
@@ -42,6 +43,7 @@
   color: #475569;
   max-width: 650px;
   margin: 0 auto;
+  line-height: 1.6;
 }
 
 /* Layout */
@@ -65,6 +67,7 @@
   font-weight: 600;
   margin-bottom: 8px;
   color: #1E293B;
+  font-size: 0.95rem;
 }
 
 .input-group input {
@@ -73,13 +76,14 @@
   border: 1px solid #CBD5E1;
   border-radius: 12px;
   font-size: 1rem;
-  transition: border-color 0.2s;
+  font-family: 'Inter', sans-serif;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .input-group input:focus {
   outline: none;
-  border-color: #6366F1;
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+  border-color: #2563EB;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
 }
 
 /* Results Section */
@@ -89,39 +93,53 @@
   gap: 32px;
 }
 
-.summary-cards {
+/* Metrics */
+.metrics-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 16px;
+  gap: 20px;
 }
 
-.summary-card {
+.metric-card {
   background: white;
   border-radius: 16px;
   padding: 20px;
   text-align: center;
   border: 1px solid #E2E8F0;
+  transition: all 0.2s ease;
 }
 
-.summary-card.highlight {
-  background: linear-gradient(135deg, #ecfdf5, #f0fdfa);
+.metric-card:hover {
+  border-color: #CBD5E1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.metric-card.accent {
+  background: linear-gradient(135deg, #f0fdfa, #ecfdf5);
   border-color: #a7f3d0;
 }
 
-.card-value {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #0F172A;
-  margin-bottom: 6px;
-}
-
-.card-label {
+.metric-label {
   font-size: 0.95rem;
   color: #475569;
+  margin-bottom: 8px;
 }
 
-/* Chart */
-.chart-container {
+.animated-number {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0F172A;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Charts */
+.charts-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.chart-card {
   background: white;
   border-radius: 20px;
   padding: 24px;
@@ -130,15 +148,16 @@
 }
 
 .chart-title {
-  font-size: 1.375rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: #0F172A;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   text-align: center;
+  font-family: 'Inter', sans-serif;
 }
 
 /* Suggestions */
-.suggestions {
+.suggestions-card {
   background: white;
   border-radius: 20px;
   padding: 24px;
@@ -147,28 +166,34 @@
 }
 
 .suggestions-title {
-  font-size: 1.375rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: #0F172A;
   margin-bottom: 16px;
+  font-family: 'Inter', sans-serif;
 }
 
-.suggestions ul {
+.suggestions-card ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.suggestions li {
+.suggestions-card li {
   padding: 12px 0;
-  border-bottom: 1px solid #F1F5F9;
   color: #475569;
   font-size: 1rem;
   line-height: 1.6;
+  border-bottom: 1px solid #F1F5F9;
 }
 
-.suggestions li:last-child {
+.suggestions-card li:last-child {
   border-bottom: none;
+}
+
+/* Recharts Tooltip (Optional Global Style) */
+.recharts-tooltip-wrapper {
+  z-index: 1000;
 }
 
 /* Responsive */
@@ -176,17 +201,26 @@
   .sip-layout {
     grid-template-columns: 1fr;
   }
+
+  .charts-row {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 600px) {
-  .sip-card,
-  .summary-card,
-  .chart-container,
-  .suggestions {
-    padding: 20px;
+  .sip-card {
+    padding: 24px;
   }
 
   .sip-title {
     font-size: 2rem;
+  }
+
+  .metric-card {
+    padding: 16px;
+  }
+
+  .animated-number {
+    font-size: 1.4rem;
   }
 }
