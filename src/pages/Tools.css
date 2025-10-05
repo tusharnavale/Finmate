@@ -1,67 +1,150 @@
+/* Tools.css - Premium SaaS Fintech Design */
+
 .tools-wrapper {
-  padding: 80px 10%;
-  background: #f8f9fa;
+  padding: 100px 0;
+  background: #F8FAFC;
   text-align: center;
 }
 
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header */
+.tools-header {
+  margin-bottom: 64px;
+}
+
+.section-badge {
+  display: inline-block;
+  background: rgba(37, 99, 235, 0.1);
+  color: #2563EB;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  font-family: 'Inter', sans-serif;
+}
+
 .tools-title {
-  font-size: 2.8rem;
-  color: #1db954;
-  margin-bottom: 10px;
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin-bottom: 16px;
+  line-height: 1.2;
 }
 
 .tools-subtitle {
-  color: #555;
-  font-size: 1.2rem;
-  margin-bottom: 50px;
+  color: #475569;
+  font-size: 1.25rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
+/* Tools Grid */
 .tools-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
 }
 
 .tool-card {
-  background: #fff;
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
+  background: white;
+  border-radius: 20px;
+  padding: 36px 28px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
 .tool-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  border-color: #CBD5E1;
 }
 
 .tool-icon {
-  margin-bottom: 20px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 72px;
+  height: 72px;
+  background: rgba(37, 99, 235, 0.1);
+  border-radius: 18px;
+  margin-bottom: 24px;
+  transition: all 0.3s ease;
+}
+
+.tool-card:hover .tool-icon {
+  transform: scale(1.1);
+  background: rgba(37, 99, 235, 0.15);
+}
+
+.tool-icon-svg {
+  color: #2563EB;
 }
 
 .tool-card h3 {
-  font-size: 1.5rem;
-  color: #222;
-  margin-bottom: 10px;
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 12px;
 }
 
 .tool-card p {
-  color: #555;
+  color: #475569;
   font-size: 1rem;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  line-height: 1.6;
 }
 
-.tool-btn {
-  padding: 10px 24px;
-  background: #1db954;
-  border: none;
-  color: white;
-  font-size: 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s;
+/* CTA Link */
+.tool-link {
+  display: inline-block;
+  font-weight: 600;
+  color: #2563EB;
+  text-decoration: none;
+  font-size: 1.05rem;
+  position: relative;
+  padding-bottom: 4px;
 }
 
-.tool-btn:hover {
-  background: #169b45;
+.tool-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #2563EB;
+  transition: width 0.3s ease;
+}
+
+.tool-link:hover::after {
+  width: 100%;
+}
+
+.tool-link:hover {
+  color: #1D4ED8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tools-title {
+    font-size: 2.2rem;
+  }
+
+  .tools-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .tool-card {
+    padding: 30px 20px;
+  }
 }

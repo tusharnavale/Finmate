@@ -1,3 +1,4 @@
+// Tools.jsx
 import React from "react";
 import "./Tools.css";
 import Navbar from "../components/Navbar";
@@ -8,28 +9,28 @@ import { Link } from "react-router-dom";
 const Tools = () => {
   const tools = [
     {
-      icon: <TrendingUp size={40} color="#1db954" />,
+      icon: <TrendingUp size={28} className="tool-icon-svg" />,
       title: "SIP Calculator",
-      desc: "Plan your mutual fund investments smartly.",
+      desc: "Plan your mutual fund investments with precision and confidence.",
       link: "/sip",
     },
     {
-      icon: <Wallet size={40} color="#1db954" />,
+      icon: <Wallet size={28} className="tool-icon-svg" />,
       title: "EMI Calculator",
-      desc: "Know your monthly loan repayments easily.",
+      desc: "Estimate your monthly loan payments instantly and accurately.",
       link: "/emi",
     },
     {
-      icon: <Calculator size={40} color="#1db954" />,
+      icon: <Calculator size={28} className="tool-icon-svg" />,
       title: "Budget Planner",
-      desc: "Track income, expenses & save more every month.",
+      desc: "Track income, control expenses, and build smarter saving habits.",
       link: "/budget",
     },
     {
-      icon: <Target size={40} color="#1db954" />,
+      icon: <Target size={28} className="tool-icon-svg" />,
       title: "Goal Planner",
-      desc: "Calculate how much to invest for future goals.",
-      link: "/goal", // ✅ Updated here
+      desc: "Calculate exactly how much to invest to hit your future goals.",
+      link: "/goal",
     },
   ];
 
@@ -37,21 +38,27 @@ const Tools = () => {
     <>
       <Navbar />
       <div className="tools-wrapper">
-        <h1 className="tools-title">💼 Finance Tools</h1>
-        <p className="tools-subtitle">
-          Plan smartly with FinMate’s quick calculators
-        </p>
-        <div className="tools-grid">
-          {tools.map((tool, index) => (
-            <div className="tool-card" key={index}>
-              <div className="tool-icon">{tool.icon}</div>
-              <h3>{tool.title}</h3>
-              <p>{tool.desc}</p>
-              <Link to={tool.link}>
-                <button className="tool-btn">Try Now</button>
-              </Link>
-            </div>
-          ))}
+        <div className="container">
+          <div className="tools-header">
+            <span className="section-badge">Powerful Finance Tools</span>
+            <h1 className="tools-title">Your Financial Toolkit</h1>
+            <p className="tools-subtitle">
+              All-in-one suite of calculators built for clarity, speed, and smart decisions.
+            </p>
+          </div>
+
+          <div className="tools-grid">
+            {tools.map((tool, index) => (
+              <div className="tool-card" key={index}>
+                <div className="tool-icon">{tool.icon}</div>
+                <h3>{tool.title}</h3>
+                <p>{tool.desc}</p>
+                <Link to={tool.link} className="tool-link">
+                  Try Now →
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
       <Footer />
