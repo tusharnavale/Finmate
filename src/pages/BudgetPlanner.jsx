@@ -38,7 +38,6 @@ const BudgetPlanner = () => {
   const balance = parseFloat(income) - totalExpense;
   const savingsRate = income > 0 ? ((balance / parseFloat(income)) * 100).toFixed(1) : 0;
 
-  // Group expenses by category for chart
   const categoryData = DEFAULT_CATEGORIES.map((cat, index) => {
     const amt = expenses
       .filter(e => e.category === cat)
@@ -61,6 +60,10 @@ const BudgetPlanner = () => {
 
   const handleDeleteExpense = (indexToDelete) => {
     setExpenses(expenses.filter((_, index) => index !== indexToDelete));
+  };
+
+  const clearAllExpenses = () => {
+    setExpenses([]);
   };
 
   const suggestions = () => {
@@ -109,7 +112,6 @@ const BudgetPlanner = () => {
           </div>
 
           <div className="budget-layout">
-            {/* Input Section */}
             <div className="budget-card">
               <div className="income-input">
                 <label>Monthly Income (₹)</label>
@@ -145,9 +147,16 @@ const BudgetPlanner = () => {
                 <button onClick={handleAddExpense}>+ Add Expense</button>
               </div>
 
-              {/* Expense List */}
+              {/* Expense List with Clear All */}
               <div className="expense-list-section">
                 <h3 className="list-title">Recent Expenses</h3>
+                
+                {expenses.length > 0 && (
+                  <button className="clear-all-btn" onClick={clearAllExpenses}>
+                    🧹 Clear All Expenses
+                  </button>
+                )}
+
                 <ul className="expense-list">
                   {expenses.length === 0 ? (
                     <li className="no-expenses">No expenses added yet</li>
@@ -174,9 +183,7 @@ const BudgetPlanner = () => {
               </div>
             </div>
 
-            {/* Results & Charts */}
             <div className="results-section">
-              {/* Summary Metrics */}
               <div className="metrics-grid">
                 <div className="metric-card">
                   <div className="metric-label">Total Income</div>
@@ -192,9 +199,7 @@ const BudgetPlanner = () => {
                 </div>
               </div>
 
-              {/* Charts */}
               <div className="charts-row">
-                {/* Expense Breakdown */}
                 <div className="chart-card">
                   <h3 className="chart-title">Spending by Category</h3>
                   <ResponsiveContainer width="100%" height={200}>
@@ -217,7 +222,6 @@ const BudgetPlanner = () => {
                   </ResponsiveContainer>
                 </div>
 
-                {/* Income vs Expense Bar */}
                 <div className="chart-card">
                   <h3 className="chart-title">Income vs Spending</h3>
                   <ResponsiveContainer width="100%" height={200}>
@@ -233,7 +237,6 @@ const BudgetPlanner = () => {
                 </div>
               </div>
 
-              {/* Smart Insights */}
               <div className="suggestions-card">
                 <h3 className="suggestions-title">💡 Budget Insights</h3>
                 <ul>
