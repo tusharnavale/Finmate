@@ -1,87 +1,192 @@
+/* SipCalculator.css - Premium Fintech SaaS */
+
 .sip-wrapper {
-  padding: 80px 10%;
-  background: #f9f9f9;
-  font-family: "Segoe UI", sans-serif;
-  color: #333;
+  padding: 80px 0;
+  background: #F8FAFC;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #1E293B;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header */
+.page-header {
   text-align: center;
+  margin-bottom: 48px;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(99, 102, 241, 0.1);
+  color: #6366F1;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 16px;
 }
 
 .sip-title {
   font-size: 2.5rem;
-  margin-bottom: 10px;
+  font-weight: 800;
+  color: #0F172A;
+  margin-bottom: 12px;
 }
 
 .sip-subtitle {
-  font-size: 1.1rem;
-  color: #666;
-  margin-bottom: 40px;
+  font-size: 1.125rem;
+  color: #475569;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* Layout */
+.sip-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
 }
 
 .sip-card {
   background: white;
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  max-width: 600px;
-  margin: auto;
-  transition: all 0.3s ease;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  border: 1px solid #E2E8F0;
 }
 
-.sip-inputs {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.sip-inputs label {
+.input-group label {
+  display: block;
   text-align: left;
   font-weight: 600;
+  margin-bottom: 8px;
+  color: #1E293B;
 }
 
-.sip-inputs input {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-}
-
-.sip-btn {
-  background-color: #1db954;
-  color: white;
+.input-group input {
+  width: 100%;
   padding: 14px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.sip-btn:hover {
-  background-color: #159c46;
-  transform: scale(1.05);
-}
-
-.sip-result {
-  margin-top: 40px;
-  padding: 20px;
-  background: #eaf6ea;
+  border: 1px solid #CBD5E1;
   border-radius: 12px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
 }
 
-.sip-result h3 {
-  margin-bottom: 10px;
-  color: #1db954;
+.input-group input:focus {
+  outline: none;
+  border-color: #6366F1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
 }
 
-.sip-result p {
+/* Results Section */
+.results-section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.summary-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #E2E8F0;
+}
+
+.summary-card.highlight {
+  background: linear-gradient(135deg, #ecfdf5, #f0fdfa);
+  border-color: #a7f3d0;
+}
+
+.card-value {
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 6px;
+}
+
+.card-label {
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+/* Chart */
+.chart-container {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  border: 1px solid #E2E8F0;
+}
+
+.chart-title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Suggestions */
+.suggestions {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  border: 1px solid #E2E8F0;
+}
+
+.suggestions-title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 16px;
+}
+
+.suggestions ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.suggestions li {
+  padding: 12px 0;
+  border-bottom: 1px solid #F1F5F9;
+  color: #475569;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.suggestions li:last-child {
+  border-bottom: none;
 }
 
 /* Responsive */
+@media (max-width: 900px) {
+  .sip-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 600px) {
-  .sip-card {
-    padding: 30px 20px;
+  .sip-card,
+  .summary-card,
+  .chart-container,
+  .suggestions {
+    padding: 20px;
+  }
+
+  .sip-title {
+    font-size: 2rem;
   }
 }
