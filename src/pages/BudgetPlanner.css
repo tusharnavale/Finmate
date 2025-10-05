@@ -1,4 +1,4 @@
-/* BudgetPlanner.css - SaaS Fintech Theme */
+/* BudgetPlanner.css - Final with Delete */
 
 .budget-wrapper {
   padding: 80px 0;
@@ -125,6 +125,7 @@
 
 .expense-list li {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 12px 0;
   border-bottom: 1px solid #F1F5F9;
@@ -135,14 +136,25 @@
   border-bottom: none;
 }
 
+.no-expenses {
+  color: #64748B;
+  font-style: italic;
+  text-align: center;
+  padding: 12px 0;
+}
+
 .expense-title {
   color: #1E293B;
   font-weight: 500;
+  flex: 1;
 }
 
 .expense-amount {
   color: #0F172A;
   font-weight: 600;
+  margin: 0 12px;
+  min-width: 90px;
+  text-align: right;
 }
 
 .expense-category {
@@ -151,6 +163,26 @@
   background: rgba(99, 102, 241, 0.1);
   padding: 2px 8px;
   border-radius: 20px;
+  margin-right: 8px;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #EF4444;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.delete-btn:hover {
+  background: rgba(239, 68, 68, 0.1);
+  transform: scale(1.1);
 }
 
 /* Results */
@@ -267,6 +299,13 @@
 @media (max-width: 600px) {
   .expense-list li {
     flex-direction: column;
-    gap: 6px;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .expense-amount,
+  .expense-category,
+  .delete-btn {
+    align-self: flex-end;
+    margin: 0;
   }
 }

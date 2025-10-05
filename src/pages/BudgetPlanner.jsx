@@ -1,5 +1,5 @@
 // BudgetPlanner.jsx
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./BudgetPlanner.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -57,6 +57,10 @@ const BudgetPlanner = () => {
       setExpenseTitle("");
       setExpenseAmount("");
     }
+  };
+
+  const handleDeleteExpense = (indexToDelete) => {
+    setExpenses(expenses.filter((_, index) => index !== indexToDelete));
   };
 
   const suggestions = () => {
@@ -145,13 +149,27 @@ const BudgetPlanner = () => {
               <div className="expense-list-section">
                 <h3 className="list-title">Recent Expenses</h3>
                 <ul className="expense-list">
-                  {expenses.slice(-5).map((exp, i) => (
-                    <li key={i}>
-                      <span className="expense-title">{exp.title}</span>
-                      <span className="expense-amount">₹{exp.amount.toLocaleString("en-IN")}</span>
-                      <span className="expense-category">{exp.category}</span>
-                    </li>
-                  ))}
+                  {expenses.length === 0 ? (
+                    <li className="no-expenses">No expenses added yet</li>
+                  ) : (
+                    expenses.slice(-5).map((exp, i) => {
+                      const actualIndex = expenses.length - 5 + i;
+                      return (
+                        <li key={actualIndex}>
+                          <span className="expense-title">{exp.title}</span>
+                          <span className="expense-amount">₹{exp.amount.toLocaleString("en-IN")}</span>
+                          <span className="expense-category">{exp.category}</span>
+                          <button
+                            className="delete-btn"
+                            onClick={() => handleDeleteExpense(actualIndex)}
+                            aria-label="Delete expense"
+                          >
+                            🗑️
+                          </button>
+                        </li>
+                      );
+                    })
+                  )}
                 </ul>
               </div>
             </div>
